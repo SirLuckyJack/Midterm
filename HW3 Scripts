@@ -1,0 +1,18 @@
+Box Plot by Total Stat Script:
+
+p = ggplot(df, aes(x=Type.1, y = Total)) + geom_boxplot(outlier.size=0) + geom_jitter(width=0.2,alpha=0.4,aes(color = Legendary))
+p = p + labs(title = 'Box Plot of Total Stats by Pokemon Type')
+p
+------------------------------------------------------------------------------------------
+Correlation Between Pokemon Stats Script:
+
+pairs(df[,c('Total', 'HP', 'Attack', 'Defense', 'Sp..Atk', 'Sp..Def', 'Speed')])
+------------------------------------------------------------------------------------------
+Pokemon Types by Generation Script:
+
+ggplot(data = df) + geom_bar(mapping = aes(x = Type.1, fill = factor(Generation)))
+------------------------------------------------------------------------------------------
+Total Stats by  Generation:
+
+ggplot(data = df) + geom_point(mapping = aes(x = Generation, y = Total, shape = factor(Legendary)))
+--------------------------------------------------------------------------------------------
